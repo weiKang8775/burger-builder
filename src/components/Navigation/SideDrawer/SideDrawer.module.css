@@ -1,0 +1,75 @@
+.SideDrawer {
+  position: fixed;
+  width: 280px;
+  max-width: 70%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  background-color: white;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  transition: transform 300ms ease-out;
+}
+
+@media (min-width: 500px) {
+  .SideDrawer,
+  .ToggleBtn {
+    display: none;
+  }
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(-100%);
+}
+
+.Logo {
+  height: 11%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ToggleBtn {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+.ToggleIcon {
+  position: relative;
+  margin-top: 23px;
+  margin-left: 10px;
+}
+
+.ToggleIcon,
+.ToggleIcon::before,
+.ToggleIcon::after {
+  width: 30px;
+  height: 4px;
+  background-color: #8f5c2c;
+  display: inline-block;
+}
+
+.ToggleIcon::before,
+.ToggleIcon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 200ms;
+}
+
+.ToggleIcon::before {
+  top: -10px;
+}
+
+.ToggleIcon::after {
+  top: 10px;
+}

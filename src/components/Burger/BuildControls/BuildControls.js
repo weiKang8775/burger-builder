@@ -19,9 +19,16 @@ const buildControls = props => {
           label={control.label}
           key={control.label}
           addIngredientHandler={() => props.addIngredientHandler(control.type)}
-          removeIngredientHandler={() => props.removeIngredientHandler(control.type)} />
+          removeIngredientHandler={() => props.removeIngredientHandler(control.type)}
+          disableControl={props.disableControl[control.type]}
+        />
       })
     }
+    <button
+      className={styles.OrderButton}
+      disabled={!props.purchaseable}
+      onClick={props.showOrderSummaryHandler}
+    >ORDER NOW</button>
   </div>
   );
 }
